@@ -241,15 +241,24 @@ hr.soften {
 }
 
 table {
-  margin: 0 0 12px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-th {
+th, td {
+  padding: 8px;
+  line-height: 20px;
   text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #DDD;
 }
 
-td {
-  padding-right: 10px;
+th, thead {
+  border-top: 0;
+}
+
+thead th {
+  vertical-align: bottom;
 }
 
 /*Footer*/
