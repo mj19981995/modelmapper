@@ -240,6 +240,18 @@ hr.soften {
   border: 0;
 }
 
+table {
+  margin: 0 0 12px;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  padding-right: 10px;
+}
+
 /*Footer*/
 
 .footer {
