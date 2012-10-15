@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: SPI Overview
+---
+
 # SPI Overview
 
 The ModelMapper Service Provider Interface (SPI) consists of the following types:

@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: Performance
+---
+
 # Performance
 
 Below are the results of a simple [https://github.com/jhalterman/modelmapper/blob/master/core/src/test/java/org/modelmapper/performance/DozerComparison.java micro-benchmark] that compares the performance of ModelMapper to that of [http://dozer.sourceforge.net Dozer]. While performance on the JVM is notoriously difficult to measure, these results serve as a general comparison between the two.

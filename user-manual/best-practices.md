@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: Best Practices
+---
+
 # Best Practices
 
 #### Reuse ModelMapper instances where possible

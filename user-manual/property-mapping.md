@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: Property Mapping
+---
+
 # Property Mapping
 
 For most object models, ModelMapper does a good job of intelligently mapping source and destination properties. But for certain models where property and class names are very dissimilar, a PropertyMap can be created to define **explicit** mappings between source and destination properties.

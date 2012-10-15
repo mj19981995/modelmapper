@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: Extensions
+---
+
 # Extensions
 
 ModelMapper's [API](/user-manual/api-overview/) and [SPI](/user-manual/spi-overview/) allow for simple the creation of extensions. The core extensions provided along with the library are described below.

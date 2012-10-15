@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: Validation
+---
+
 # Validation
 
 While ModelMapper will attempt to match every destination property to a source property, there will occasionally be destination properties that it cannot find matches for. To verify that all destination properties are matched, call the `validate` method:

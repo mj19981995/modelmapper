@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: Converters
+---
+
 # Converters
 
 Converters allow custom conversion to take place when mapping to a destination type or property. 

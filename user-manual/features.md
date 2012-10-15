@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: Features
+---
+
 # Features
 
   * Thread safe

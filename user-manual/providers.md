@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: Providers
+---
+
 # Providers
 
 Providers allow you to provide your own instance of destination properties and types prior to mapping as opposed to having ModelMapper construct them via the default constructor. They can be configured globally, for a specific TypeMap, or for specific properties.

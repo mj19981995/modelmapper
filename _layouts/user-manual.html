@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ModelMapper - {{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles and icons -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/assets/css/prettify.css" />
+    <link rel="stylesheet" href="/assets/css/css.css">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+{% include header.html %}
+  <div class="container">
+    <div class="row">
+      {% include user-manual-menu.html %}
+      <div class="span9">
+{{ content }}
+      </div>
+    </div>
+  </div>
+{% include footer.html %}
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="/assets/js/application.js"></script>
+  </body>
+</html>

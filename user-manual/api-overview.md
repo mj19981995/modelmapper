@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: API Overview
+---
+
 # API Overview 
 
 The ModelMapper API consists of a few principal types:

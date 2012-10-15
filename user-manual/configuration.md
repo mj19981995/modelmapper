@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: Configuration
+---
+
 # Configuration
 
 ModelMapper uses a set of conventions and configuration to determine which source and destination properties match each other. Available configuration, along with default values, is described below:

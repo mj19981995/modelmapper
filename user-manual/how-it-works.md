@@ -1,3 +1,8 @@
+---
+layout: user-manual
+title: How It Works
+---
+
 # How It Works
 
 ModelMapper consists of two separate processes: the _matching process_, where a source and destination type's properties are matched to each other, and the _mapping process_ where matched property values are converted from a source to destination object. A further description of these processes follows.
