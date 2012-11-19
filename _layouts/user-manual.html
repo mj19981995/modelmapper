@@ -33,16 +33,22 @@
     </script>
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
+<div id="wrapper">
+<div id="wrapper-inner">
 {% include header.html %}
   <div class="container">
     <div class="row">
       {% include user-manual-menu.html %}
       <div class="span9">
+<div id="content">
 {{ content }}
+</div>
       </div>
     </div>
   </div>
 {% include footer.html %}
+</div>
+</div>
 
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/assets/js/jquery.min.js"></script>
