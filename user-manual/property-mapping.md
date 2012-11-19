@@ -89,7 +89,7 @@ This example specifies that the destination type's `setName` method should be sk
 
 # Converters
 
-Converters allow custom conversion to take place when mapping a source to a destination property. 
+Converters allow custom conversion to take place when mapping a source to a destination property (see the general page on [Converters](/user-manual/converters/) for more info). 
 
 Consider this converter, which extends AbstractConverter and converts a String to an uppercase String:
 
