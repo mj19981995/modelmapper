@@ -12,9 +12,9 @@ Setting|Description|Default Value
 Access level|Determines which methods and fields are eligible for matching based on accessibility|public
 Field matching|Indicates whether fields are eligible for matching|disabled
 Naming convention|Determines which methods and fields are eligible for matching based on name|JavaBeans
-Name transformer|Transforms eligible property and class names prior to matching|JavaBeans
+Name transformer|Transforms eligible property and class names prior to tokenization|JavaBeans
 Name tokenizer|Tokenizes source and destination property names prior to matching|Camel Case
-[Matching strategy](#matching-strategies)|Determines how source and destination properties are matched|Standard
+[Matching strategy](#matching-strategies)|Determines how source and destination tokens are matched|Standard
 
 You can read about how this configuration is used during the [matching process](/user-manual/how-it-works/#matching-process).
 
