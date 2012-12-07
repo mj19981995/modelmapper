@@ -24,7 +24,7 @@ Let's try mapping some objects. Consider the following object model:
 	
 	class Order {
 	  private Customer customer;
-	  private Address billingaddress;
+	  private Address billingAddress;
 	}
 	
 	class Customer {
