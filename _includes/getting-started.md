@@ -97,7 +97,7 @@ Additional [matching strategies](http://modelmapper.org/user-manual/configuratio
 
 ### Validating Matches
 
-Aside from writing tests to verify that your objects are being mapped as expected, ModelMapper has built-in validation [Validation](/user-manual/validation) that will let you know if any destination properties are unmatched.
+Aside from writing tests to verify that your objects are being mapped as expected, ModelMapper has built-in [validation](/user-manual/validation) that will let you know if any destination properties are unmatched.
 
 First we have to let ModelMapper know about the types we want to validate. We can do this by creating a `TypeMap`:
 
