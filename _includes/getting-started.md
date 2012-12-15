@@ -120,4 +120,4 @@ If any `TypeMap` contains a destination property that is unmatched to a source p
 
 Congratulations! You've learned how to map objects with safety and ease. 
 
-There's a lot more to learn about ModelMapper, including the complete [mapping API](/user-manual/property-mapping/) and [configuration](/user-manual/configuration) options, by checking out the [User Manual](/user-manual/). You can also check out some additional [examples](/examples/) of ModelMapper in action.
+There's a lot more to ModelMapper, including the complete [mapping API](/user-manual/property-mapping/) and [configuration](/user-manual/configuration) options. Check out the [user manual](/user-manual/) to learn more. You can also check out some additional [examples](/examples/) of ModelMapper in action.
