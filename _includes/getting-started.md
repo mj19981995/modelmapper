@@ -17,14 +17,14 @@ Otherwise you can [download](https://github.com/jhalterman/modelmapper/downloads
 
 ### Mapping
 
-Let's try mapping some objects. Consider the following object model:
+Let's try mapping some objects. Consider the following [object model](https://github.com/jhalterman/modelmapper/tree/master/examples/src/main/java/org/modelmapper/gettingstarted):
 
 {:.prettyprint .lang-java}
 	// Assume getters and setters on each class
 	
 	class Order {
-	  private Customer customer;
-	  private Address billingAddress;
+	  Customer customer;
+	  Address billingAddress;
 	}
 	
 	class Customer {
@@ -59,8 +59,8 @@ We can check that properties are mapped as expected:
 {:.prettyprint .lang-java}
 	assert orderDTO.getCustomerFirstName().equals(order.getCustomer().getName().getFirstName());
 	assert orderDTO.getCustomerLastName().equals(order.getCustomer().getName().getLastName());
-	assert orderDTO.getBillingStreet().equals(order.getBillAddress().getStreet());
-	assert orderDTO.getBillingCity().equals(order.getBillAddress().getCity());
+	assert orderDTO.getBillingStreet().equals(order.getBillingAddress().getStreet());
+	assert orderDTO.getBillingCity().equals(order.getBillingAddress().getCity());
 
 Similarly, mapping in the other direction works as expected with zero configuration:
 
