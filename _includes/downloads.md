@@ -6,11 +6,11 @@
 
 **Guice Extension**
 
-[modelmapper-guice-0.5.0.jar](/assets/modelmapper-guice-0.5.0.jar)
+[modelmapper-guice-0.5.4.jar](/assets/modelmapper-guice-0.5.4.jar)
 
 **Spring Extension**
 
-[modelmapper-spring-0.5.0.jar](/assets/modelmapper-spring-0.5.0.jar)
+[modelmapper-spring-0.5.4.jar](/assets/modelmapper-spring-0.5.4.jar)
 
 ## Maven
 
