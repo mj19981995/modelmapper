@@ -12,6 +12,7 @@ The goal of the user manual is to provide an overview of ModelMapper's features 
  * [Configuration](/user-manual/configuration)
  * [Converters](/user-manual/converters)
  * [Providers](/user-manual/providers)
+ * [Generics](/user-manual/generics)
  * [How It Works](/user-manual/how-it-works)
  * [API Overview](/user-manual/api-overview)
  * [SPI Overview](/user-manual/spi-overview)
