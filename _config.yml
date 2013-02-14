@@ -6,4 +6,4 @@ name: ModelMapper
 baseurl: 
 auto: true
 markdown: kramdown
-version: 0.5.4
+version: 0.5.5
