@@ -5,7 +5,7 @@ title: Converters
 
 # Converters
 
-Converters allow custom conversion to take place when mapping to a destination type or property. 
+Conversion to a destination type or property can be delegated to a Converter. Converters generally take the place of any implicit or explicit mappings between two types (see [below](#conversion-with-mapping) for exceptions).
 
 ### Creating a Converter
 
@@ -47,3 +47,16 @@ We can also specify a Converter to be used when converting properties within a T
 	personTypeMap.setPropertyConverter(propertyConverter);
 
 Converters can also be set for specific properties. See the mapping API page on [converters](/user-manual/property-mapping/#converters) for more info using converters with properties.
+
+### Conversion with Mapping
+
+While Converters by default take the place of any mappings between two types, they can also be used _in addition to_ any defined mappings.
+
+{:.prettyprint .lang-java}
+	personTypeMap.setPreConverter(personConverter);
+	
+This specifies that the `personConverter` should be run _before_, and in addition to, the defined mappings for the `personTypeMap`. We can also specify that the `personConverter` be used _after_, and in addition to, the defined mappings:
+	
+{:.prettyprint .lang-java}
+	personTypeMap.setPostConverter(personConverter);
+    
