@@ -1,9 +1,7 @@
 # Jekyll
 permalink: pretty
 paginate: 10 
-exclude: 
 name: ModelMapper
 baseurl: 
-auto: true
 markdown: kramdown
 version: 0.5.6
