@@ -49,7 +49,7 @@ And for mapping from constant values:
 {:.prettyprint .lang-java}
 	map(21).setAgeString(null);
 
-**Note**: When providing a value on the left-hand side of a `map()` statement, any value provided on the right-hand side in a setter is considered a dummy value and is not used.
+**Note**: When a value is provided on the left-hand side of a `map()` statement, any value provided on the right-hand side in a setter is considered a dummy value and is not used.
 
 ### Using a PropertyMap
 
