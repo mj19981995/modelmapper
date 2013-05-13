@@ -32,17 +32,24 @@ This example maps the destination type's `setEmployer` method to the constant va
 {:.prettyprint .lang-java}
 	map().setEmployer("Initech");
 
+### Mismatched types
+
 Map statements can also be written to map properties whose types do not match:
 
 {:.prettyprint .lang-java}
 	map(source.getAge()).setAgeString(null);
 
-Similar for constant values:
+Similar for mapping to primitives:	
+
+{:.prettyprint .lang-java}
+	map(source.getAgeString()).setAge((short) 0);
+
+And for mapping from constant values:
 
 {:.prettyprint .lang-java}
 	map(21).setAgeString(null);
 
-**Note**: Since the `setAgeString` method requires a value we simply pass in `null` which is unused.
+**Note**: When providing a value on the left-hand side of a `map()` statement, any value provided on the right-hand side in a setter is considered a dummy value and is not used.
 
 ### Using a PropertyMap
 
