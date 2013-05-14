@@ -144,14 +144,14 @@ Consider this Provider which provides `Person` instances:
 Configuring `personProvider` to be used for a specific property mapping is simple:
 
 {:.prettyprint .lang-java}
-	withProvider(personProvider).map().setPerson(source.getPerson());
+	with(personProvider).map().setPerson(source.getPerson());
 
 When mapping takes place, `personProvider` will be called to retrieve a Person instance, which will then be mapped to the destination object's `setPerson` method.
 
 Providers can also be used with converters:
 
 {:.prettyprint .lang-java}
-	withProvider(personProvider)
+	with(personProvider)
 	    .using(personConverter)
 	    .map().setPerson(source.getPerson());
 
@@ -183,7 +183,7 @@ Conditions can also be used with Providers and Converters:
 
 {:.prettyprint .lang-java}
 	when(someCondition)
-	    .withProvider(personProvider)
+	    .with(personProvider)
 	    .using(personConverter)
 	    .map().setPerson(source.getPerson());
 

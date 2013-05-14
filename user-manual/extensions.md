@@ -27,7 +27,7 @@ Or set the Provider to be used for a specific TypeMap:
 The provider can also be used for individual mappings:
 
 {:.prettyprint .lang-java}
-	withProvider(springProvider).map().someSetter(source.someGetter());
+	with(springProvider).map().someSetter(source.someGetter());
 
 ### Guice
 
@@ -49,4 +49,4 @@ Or set the Provider to be used for a specific TypeMap:
 The provider can also be used for individual mappings:
 
 {:.prettyprint .lang-java}
-	withProvider(guiceProvider).map().someSetter(source.someGetter());
+	with(guiceProvider).map().someSetter(source.someGetter());
