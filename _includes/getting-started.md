@@ -13,7 +13,7 @@ If you're a Maven user just add the `modelmapper` library as a dependency:
 	  <version>{{ site.version }}</version>
 	</dependency>
 
-Otherwise you can [download](https://github.com/jhalterman/modelmapper/downloads) the latest ModelMapper jar and add it to your classpath.
+Otherwise you can [download](/downloads) the latest ModelMapper jar and add it to your classpath.
 
 ### Mapping
 
