@@ -75,7 +75,7 @@ While ModelMapper will do its best to implicitly match source and destination pr
 Let's map `Order.billingAddress.street` to `OrderDTO.billingStreet`. First we'll define a `PropertyMap` that contains this mapping:
 
 {:.prettyprint .lang-java}
-	public class OrderMap extends PropertyMap<Order, OrderDTO>() {
+	PropertyMap<Order, OrderDTO> orderMap = new PropertyMap<Order, OrderDTO>() {
 	  protected void configure() {
 	    map().setBillingStreet(source.getBillingAddress().getStreet());
 	  }
@@ -84,7 +84,7 @@ Let's map `Order.billingAddress.street` to `OrderDTO.billingStreet`. First we'll
 Then we can add the mapping to our `ModelMapper` instance:
 
 {:.prettyprint .lang-java}
-	modelMapper.addMappings(new OrderMap());
+	modelMapper.addMappings(orderMap);
 
 ### Conventional Configuration
 
