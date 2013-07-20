@@ -253,10 +253,21 @@ h3 code {
   opacity: .8;
 }
 
+.introduction {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
 .introduction h2 {
   margin-top: 27px;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.row-fluid [class*="span"] {
+  padding-left: 10px;
+  padding-top: 6px;
+  padding-bottom: 10px;
 }
 
 /* Misc */
