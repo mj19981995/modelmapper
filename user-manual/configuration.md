@@ -1,5 +1,6 @@
 ---
-layout: user-manual
+layout: content
+menu: user-manual
 title: Configuration
 ---
 
@@ -50,12 +51,12 @@ This example configures a `ModelMapper` to allow any source and destination prop
 	  .setSourceNamingConvention(NamingConventions.NONE);
 	  .setDestinationNamingConvention(NamingConventions.NONE);
 
-This example configures a `ModelMapper` to use a `Pascal Case` name tokenizer for source and destination properties:
+This example configures a `ModelMapper` to use the `Underscore` name tokenizer for source and destination properties:
 
 {:.prettyprint .lang-java}
 	modelMapper.getConfiguration();
-	  .setSourceNameTokenizer(pascalCaseTokenizer);
-	  .setDestinationNameTokenizer(pascalCaseTokenizer);
+	  .setSourceNameTokenizer(NameTokenizers.UNDERSCORE);
+	  .setDestinationNameTokenizer(NameTokenizers.UNDERSCORE);
 
 ### Available Conventions
 
@@ -69,6 +70,7 @@ Convention|Description
 `NameTransformers.JAVABEANS_ACCESSOR`|Transforms accessor names according to JavaBeans convention
 `NameTransformers.JAVABEANS_MUTATOR`|Transforms mutators names according to JavaBeans convention
 `NameTokenizers.CAMEL_CASE`|Tokenizes property and class names according to Camel Case convention
+`NameTokenizers.UNDERSCORE`|Tokenizes property and class names by underscores
 `MatchingStrategies.STANDARD`|Intelligently matches source and destination properties
 `MatchingStrategies.LOOSE`|Loosely matches source and destination properties
 `MatchingStrategies.STRICT`|Strictly matches source and destination properties

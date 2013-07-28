@@ -1,5 +1,6 @@
 ---
-layout: user-manual
+layout: content
+menu: user-manual
 title: SPI Overview
 ---
 
@@ -17,16 +18,20 @@ The ModelMapper Service Provider Interface (SPI) consists of the following types
 
   * **NamingConvention**
     * The interface you implement to determine which property names are eligible for matching
-    * Set against a MatchingConfiguration
+    * Set against a Configuration
 
   * **NameTransformer**
     * The interface you implement to transform property names prior to matching
-    * Set against a MatchingConfiguration
+    * Set against a Configuration
 
   * **NameTokenizer**
     * The interface you implement to tokenize property names prior to matching
-    * Set against a MatchingConfiguration
+    * Set against a Configuration
 
   * **[MatchingStrategy](/user-manual/configuration/#matching-strategies)**
     * The interface you implement to determine whether a source property hierarchy matches a destination property hierarchy
-    * Set against a MatchingConfiguration
+    * Set against a Configuration
+    
+  * **ValueReader**
+    * The interface you implement to read values from generic data sources
+    * Added to a Configuration

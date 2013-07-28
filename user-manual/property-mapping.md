@@ -1,5 +1,6 @@
 ---
-layout: user-manual
+layout: content
+menu: user-manual
 title: Property Mapping
 ---
 

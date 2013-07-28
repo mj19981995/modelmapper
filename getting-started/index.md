@@ -1,3 +1,9 @@
+---
+layout: content
+menu: getting-started
+title: Getting Started
+---
+
 # Getting Started
 
 This section will guide you through the setup and basic usage of ModelMapper.
