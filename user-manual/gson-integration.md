@@ -75,7 +75,25 @@ And we can assert that values are mapped as expected:
     assertEquals(order.getCustomer().getId(), 789);
     assertEquals(order.getCustomer().getAddress().getStreet(), "123 Main Street");
     assertEquals(order.getCustomer().getAddress().getCity(), "SF");
-    
+
+### Explicit Mapping
+
+While ModelMapper will do its best to implcitly match JsonElement values to destination properties, sometimes you may need to explicitly define mappings between properties.
+
+Let's map our JSON's `customer.street_address` to `Order.customer.address.street`:
+
+{:.prettyprint .lang-java}
+    PropertyMap<JsonElement, Order> orderMap = new PropertyMap<JsonElement Order>() {
+      protected void configure() {
+        map(source("customer.street_address")).getCustomer().getAddress.setStreet(null);
+      }
+    };
+
+Then we can add the mapping to our `ModelMapper` instance:
+
+{:.prettyprint .lang-java}
+	modelMapper.createTypeMap(orderElement, Order.class).addMappings(orderMap);
+
 ### Things to Note
 
 ModelMapper maintains a [TypeMap](http://modelmapper.org/javadoc/org/modelmapper/TypeMap.html) for each source and destination type, containing the mappings bewteen the two types. For "generic" types such as JsonElement this can be problematic since the structure of a JsonElement can vary. In order to distinguish structurally different JsonElements that map to the same destination type, we can provide a _type map name_ to ModelMapper.

@@ -69,6 +69,24 @@ And we can assert that values are mapped as expected:
     assertEquals(order.getCustomer().getAddress().getStreet(), "123 Main Street");
     assertEquals(order.getCustomer().getAddress().getCity(), "SF");
     
+### Explicit Mapping
+
+While ModelMapper will do its best to implcitly match Record values to destination properties, sometimes you may need to explicitly define mappings between properties.
+
+Let's map our Record's `customer.street_address` to `Order.customer.address.street`:
+
+{:.prettyprint .lang-java}
+    PropertyMap<Record, Order> orderMap = new PropertyMap<Record, Order>() {
+      protected void configure() {
+        map(source("customer.street_address")).getCustomer().getAddress.setStreet(null);
+      }
+    };
+
+Then we can add the mapping to our `ModelMapper` instance:
+
+{:.prettyprint .lang-java}
+	modelMapper.createTypeMap(orderRecord, Order.class).addMappings(orderMap);
+    
 ### Things to Note
 
 ModelMapper maintains a [TypeMap](http://modelmapper.org/javadoc/org/modelmapper/TypeMap.html) for each source and destination type, containing the mappings bewteen the two types. For "generic" types such as Record this can be problematic since the structure of a Record can vary. In order to distinguish structurally different Records that map to the same destination type, we can provide a _type map name_ to ModelMapper.
