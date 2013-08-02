@@ -19,11 +19,11 @@ Name tokenizer|Tokenizes source and destination property names prior to matching
 
 You can read about how this configuration is used during the [matching process](/user-manual/how-it-works/#matching-process).
 
-### Default Configuration
+## Default Configuration
 
 Default configuration uses the *Standard* matching strategy to match only *public* source and destination *methods* that are named according to the *JavaBeans* convention. 
 
-### Configuration Examples
+## Configuration Examples
 
 Adjusting configuration for certain matching requirements is simple. This example configures a `ModelMapper` to allow `protected` methods to be matched:
 
@@ -58,7 +58,7 @@ This example configures a `ModelMapper` to use the `Underscore` name tokenizer f
 	  .setSourceNameTokenizer(NameTokenizers.UNDERSCORE);
 	  .setDestinationNameTokenizer(NameTokenizers.UNDERSCORE);
 
-### Available Conventions
+## Available Conventions
 
 ModelMapper includes several pre-defined conventions for handling different property matching requirements:
 
@@ -75,7 +75,7 @@ Convention|Description
 `MatchingStrategies.LOOSE`|Loosely matches source and destination properties
 `MatchingStrategies.STRICT`|Strictly matches source and destination properties
 
-# Matching Strategies
+## Matching Strategies
 
 Matching strategies are used during the [matching process](/user-manual/how-it-works/#matching-process) to match source and destination properties to each other. Below is a description of each strategy.
 

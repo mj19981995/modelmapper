@@ -8,7 +8,7 @@ title: Dagger Integration
 
 ModelMapper's Dagger integration allows for the provisioning of destination objects to be delegated to a Dagger ObjectGraph during the mapping process. 
 
-### Setup
+## Setup
 
 To get started, add the `modelmapper-dagger` Maven dependency to your project:
 
@@ -19,7 +19,7 @@ To get started, add the `modelmapper-dagger` Maven dependency to your project:
 	  <version>{{ site.version }}</version>
 	</dependency>
 	
-### Usage
+## Usage
 
 Let's obtain a Dagger integrated [Provider](/user-manual/provider), which will delegate to an [ObjectGraph](http://square.github.io/dagger/javadoc/dagger/ObjectGraph.html) whenever called:
 

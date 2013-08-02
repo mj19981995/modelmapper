@@ -8,7 +8,7 @@ title: Converters
 
 Conversion to a destination type or property can be delegated to a Converter. Converters generally take the place of any implicit or explicit mappings between two types (see [below](#conversion-with-mapping) for exceptions).
 
-### Creating a Converter
+## Creating a Converter
 
 Converters can be implemented in two ways. The first is by extending `AbstractConverter`:
 
@@ -28,7 +28,7 @@ The second way is by implementing the `Converter` interface which exposes a `Map
 	  }
 	};
 
-### Configuration
+## Configuration
 
 Converters can be configured for use in several ways. The first is by adding the converter to a ModelMapper:
 
@@ -49,7 +49,7 @@ We can also specify a Converter to be used when converting properties within a T
 
 Converters can also be set for specific properties. See the mapping API page on [converters](/user-manual/property-mapping/#converters) for more info using converters with properties.
 
-### Conversion with Mapping
+## Conversion with Mapping
 
 While Converters by default take the place of any mappings between two types, they can also be used _in addition to_ any defined mappings.
 

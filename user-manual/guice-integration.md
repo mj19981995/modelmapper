@@ -8,7 +8,7 @@ title: Guice Integration
 
 ModelMapper's Guice integration allows for the provisioning of destination objects to be delegated to a Guice Injector during the mapping process. 
 
-### Setup
+## Setup
 
 To get started, add the `modelmapper-guice` Maven dependency to your project:
 
@@ -19,7 +19,7 @@ To get started, add the `modelmapper-guice` Maven dependency to your project:
 	  <version>{{ site.version }}</version>
 	</dependency>
 
-### Usage
+## Usage
 
 Let's obtain a Guice integrated [Provider](/user-manual/provider), which will delegate to an [Injector](https://google-guice.googlecode.com/svn/trunk/latest-javadoc/com/google/inject/Injector.html) whenever called:
 

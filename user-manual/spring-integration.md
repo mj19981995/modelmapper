@@ -8,7 +8,7 @@ title: Spring Integration
 
 ModelMapper's Spring integration allows for the provisioning of destination objects to be delegated to a Spring BeanFactory during the mapping process. 
 
-### Setup
+## Setup
 
 To get started, add the `modelmapper-spring` Maven dependency to your project:
 
@@ -19,7 +19,7 @@ To get started, add the `modelmapper-spring` Maven dependency to your project:
 	  <version>{{ site.version }}</version>
 	</dependency>
 	
-### Usage
+## Usage
 
 Let's obtain a Spring integrated [Provider](/user-manual/provider), which will delegate to a [BeanFactory](http://static.springsource.org/spring/docs/3.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html) whenever called:
 

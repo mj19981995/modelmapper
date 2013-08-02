@@ -8,7 +8,7 @@ title: Property Mapping
 
 For most object models, ModelMapper does a good job of intelligently mapping source and destination properties. But for certain models where property and class names are very dissimilar, a PropertyMap can be created to define **explicit** mappings between source and destination properties.
 
-### Creating a PropertyMap
+## Creating a PropertyMap
 
 To start, extend PropertyMap, supplying type arguments to represent the source type `<S>` and destination type `<D>`, then override the `configure` method:
 
@@ -32,8 +32,19 @@ This example maps the destination type's `setEmployer` method to the constant va
 
 {:.prettyprint .lang-java}
 	map().setEmployer("Initech");
+	
+### Using a PropertyMap
 
-### Mismatched types
+Once a PropertyMap is defined, it is used to add mappings to a ModelMapper:
+
+{:.prettyprint .lang-java}
+	modelMapper.addMappings(new PersonMap());
+
+Multiple PropertyMaps may be added for the same source and destination types, so long as only one mapping is defined for each destination property. 
+
+**Explicit** mappings defined in a PropertyMap will override any **implicit** mappings for the same destination properties.
+
+### Handling Mismatched Types
 
 Map statements can also be written to map properties whose types do not match:
 
@@ -50,20 +61,9 @@ And for mapping from constant values:
 {:.prettyprint .lang-java}
 	map(21).setAgeString(null);
 
-**Note**: When a value is provided on the left-hand side of a `map()` statement, any value provided on the right-hand side in a setter is considered a dummy value and is not used.
+**Note**: When a value is provided on the left-hand side of a `map()` statement, any value provided on the right-hand side in a setter is not used.
 
-### Using a PropertyMap
-
-Once a PropertyMap is defined, it is used to add mappings to a ModelMapper:
-
-{:.prettyprint .lang-java}
-	modelMapper.addMappings(new PersonMap());
-
-Multiple PropertyMaps may be added for the same source and destination types, so long as only one mapping is defined for each destination property. 
-
-**Explicit** mappings defined in a PropertyMap will override any **implicit** mappings for the same destination properties.
-
-# Deep Mapping
+## Deep Mapping
 
 This example maps the destination type's `setAge` method to the source type's `getCustomer().getAge()` method hierarchy, allowing deep mapping to occur between the source and destination methods: 
 
@@ -84,7 +84,7 @@ Deep mapping can also be performed for source properties or values whose types d
 
 **Note**: Since the `setAgeString` method requires a value we simply pass in `null` which is unused.
 
-# Skipping Properties
+## Skipping Properties
 
 While ModelMapper implicitly creates mappings from a source type to each property in the destination type, it may occasionally be desirable to skip the mapping of certain destination properties. 
 
@@ -95,7 +95,7 @@ This example specifies that the destination type's `setName` method should be sk
 
 **Note**: Since the `setName` method is skipped the `null` value is unused.
 
-# Converters
+## Converters
 
 Converters allow custom conversion to take place when mapping a source to a destination property (see the general page on [Converters](/user-manual/converters/) for more info). 
 
@@ -129,7 +129,7 @@ When defining a mapping to use this converter, we simply pass the source _object
 
 **Note**: Since a source object is given, the `null` value passed to `setName` is unused.
 
-# Providers
+## Providers
 
 Providers allow allow you to provide your own instance of destination properties and types prior to mapping (see the general page on [Providers](/user-manual/providers/) for more info).
 
@@ -156,7 +156,7 @@ Providers can also be used with converters:
 	    .using(personConverter)
 	    .map().setPerson(source.getPerson());
 
-# Conditional Mapping
+## Conditional Mapping
 
 
 Mapping for a destination property can be made conditional by supplying a `Condition` along with the mapping.

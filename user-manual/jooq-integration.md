@@ -8,7 +8,7 @@ title: jOOQ Integrations
 
 ModelMapper's jOOQ integration allows you to map a jOOQ [Record](http://www.jooq.org/javadoc/latest/org/jooq/Record.html) to a JavaBean. 
 
-### Setup
+## Setup
 
 To get started, add the `modelmapper-jooq` Maven dependency to your project:
 
@@ -24,7 +24,7 @@ Next, configure ModelMapper to support the RecordValueReader, which allows for v
 {:.prettyprint .lang-java}
     modelMapper.getConfiguration().addValueReader(new RecordValueReader());
 
-### Example Mapping
+## Example Mapping
 
 Now let's see an example mapping of a jOOQ record to a JavaBean. Consider the following record representing an order:
 
@@ -51,7 +51,7 @@ We may need to map this to a more complex object model:
 	  private String ciity;
     }
 
-Since the source fields in this example uses an underscore naming convention, we'll need to configure ModelMapper to tokenize source property names by underscore:
+Since the source Record's fields in this example uses an underscore naming convention, we'll need to configure ModelMapper to tokenize source property names by underscore:
 
 {:.prettyprint .lang-java}
     modelMapper.getConfiguration().setSourceNameTokenizer(NameTokenizers.UNDERSCORE);
@@ -69,7 +69,7 @@ And we can assert that values are mapped as expected:
     assertEquals(order.getCustomer().getAddress().getStreet(), "123 Main Street");
     assertEquals(order.getCustomer().getAddress().getCity(), "SF");
     
-### Explicit Mapping
+## Explicit Mapping
 
 While ModelMapper will do its best to implcitly match Record values to destination properties, sometimes you may need to explicitly define mappings between properties.
 
@@ -82,12 +82,12 @@ Let's map our Record's `customer.street_address` to `Order.customer.address.stre
       }
     };
 
-Then we can add the mapping to our `ModelMapper` instance:
+Then we can add the mapping to our `ModelMapper` instance for the `orderRecord`:
 
 {:.prettyprint .lang-java}
 	modelMapper.createTypeMap(orderRecord, Order.class).addMappings(orderMap);
     
-### Things to Note
+## Things to Note
 
 ModelMapper maintains a [TypeMap](http://modelmapper.org/javadoc/org/modelmapper/TypeMap.html) for each source and destination type, containing the mappings bewteen the two types. For "generic" types such as Record this can be problematic since the structure of a Record can vary. In order to distinguish structurally different Records that map to the same destination type, we can provide a _type map name_ to ModelMapper.
 
@@ -101,5 +101,3 @@ Mapping this Record to an order is simple, but we'll need to provide a _type map
 
 {:.prettyprint .lang-java}
 	Order order = modelMapper.map(longOrderRecord, Order.class, "long");
-	
-Here we've used the name "long" to represent the structure of the Record that we're mapping to an Order.

@@ -8,7 +8,7 @@ title: Providers
 
 Providers allow you to provide your own instance of destination properties and types prior to mapping as opposed to having ModelMapper construct them via the default constructor. They can be configured globally, for a specific TypeMap, or for specific properties.
 
-### Creating a Provider
+## Creating a Provider
 
 Providers can be implemented in two ways. The first is by extending AbstractProvider which allows for instances of a single type to be provided:
 
@@ -30,18 +30,18 @@ The second way is by implementing the `Provider` interface which exposes a `Prov
 
 The example above delegates provisioning of the requested types to `SomeFactory`.
 
-### Configuration
+## Configuration
 
 Providers can be configured for use in different contexts:
 
-#### By ModelMapper
+### By ModelMapper
 
 A provider can be configured for a `ModelMapper` instance to provide instances of _all_ destination types during the mapping process. This is particularly useful for delegating object provisioning to an IoC container (See the [Spring](/user-manual/extensions#spring) and [Guice](/user-manual/extensions#guice) extensions for more on this).
 
 {:.prettyprint .lang-java}
 	modelMapper.getConfiguration().setProvider(delegatingProvider);
 
-#### By TypeMap
+### By TypeMap
 
 Providers can also be configured for specific TypeMaps:
 
@@ -56,6 +56,6 @@ We can also specify a Provider to be used for providing instances of mapped prop
 {:.prettyprint .lang-java}
 	typeMap.setPropertyProvider(delegatingProvider);
 
-#### By Property
+### By Property
 
 Finally, providers can be used to provide instances of specific properties. See the mapping API page on [providers](/user-manual/property-mapping/#providers) for more on this.

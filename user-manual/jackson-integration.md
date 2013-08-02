@@ -8,7 +8,7 @@ title: Jackson Integration
 
 ModelMapper's Jackson integration allows you to map a Jackson [JsonNode](http://jackson.codehaus.org/1.9.4/javadoc/org/codehaus/jackson/JsonNode.html) to a JavaBean.
 
-### Setup
+## Setup
 
 To get started, add the `modelmapper-jackson` Maven dependency to your project:
 
@@ -24,7 +24,7 @@ Next, configure ModelMapper to support the JsonNodeValueReader, which allows for
 {:.prettyprint .lang-java}
     modelMapper.getConfiguration().addValueReader(new JsonNodeValueReader());
 	
-### Usage Example
+## Usage Example
 
 Consider the following JSON representing an order:
 
@@ -77,7 +77,7 @@ And we can assert that values are mapped as expected:
     assertEquals(order.getCustomer().getAddress().getStreet(), "123 Main Street");
     assertEquals(order.getCustomer().getAddress().getCity(), "SF");
     
-### Explicit Mapping
+## Explicit Mapping
 
 While ModelMapper will do its best to implcitly match JsonNode values to destination properties, sometimes you may need to explicitly define mappings between properties.
 
@@ -90,12 +90,12 @@ Let's map our JSON's `customer.street_address` to `Order.customer.address.street
       }
     };
 
-Then we can add the mapping to our `ModelMapper` instance:
+Then we can add the mapping to our `ModelMapper` instance for the `orderNode`:
 
 {:.prettyprint .lang-java}
 	modelMapper.createTypeMap(orderNode, Order.class).addMappings(orderMap);
     
-### Things to Note
+## Things to Note
 
 ModelMapper maintains a [TypeMap](http://modelmapper.org/javadoc/org/modelmapper/TypeMap.html) for each source and destination type, containing the mappings bewteen the two types. For "generic" types such as JsonNode this can be problematic since the structure of a JsonNode can vary. In order to distinguish structurally different JsonNodes that map to the same destination type, we can provide a _type map name_ to ModelMapper.
 
@@ -114,5 +114,3 @@ Mapping this JSON to an order is simple, but we'll need to provide a _type map n
 {:.prettyprint .lang-java}
     JsonNode orderNode = new ObjectMapper().readTree(flatJson);
 	Order order = modelMapper.map(orderNode, Order.class, "flat");
-	
-Here we've used the name "flat" to represent the structure of the JsonNode that we're mapping to an Order.

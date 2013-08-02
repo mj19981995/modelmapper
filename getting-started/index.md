@@ -8,7 +8,7 @@ title: Getting Started
 
 This section will guide you through the setup and basic usage of ModelMapper.
 
-### Setting Up
+## Setting Up
 
 If you're a Maven user just add the `modelmapper` library as a dependency:
 
@@ -21,7 +21,7 @@ If you're a Maven user just add the `modelmapper` library as a dependency:
 
 Otherwise you can [download](/downloads) the latest ModelMapper jar and add it to your classpath.
 
-### Mapping
+## Mapping
 
 Let's try mapping some objects. Consider the following [object model](https://github.com/jhalterman/modelmapper/tree/master/examples/src/main/java/org/modelmapper/gettingstarted):
 
@@ -68,13 +68,13 @@ And we can test that properties are mapped as expected:
 	assertEquals(order.getBillingAddress().getStreet(), orderDTO.getBillingStreet());
 	assertEquals(order.getBillingAddress().getCity(), orderDTO.getBillingCity());
 
-### How It Works
+## How It Works
 
 When the `map` method is called, the _source_ and _destination_ types are analyzed to determine which properties implicitly match according to a [matching strategy](http://modelmapper.org/user-manual/configuration/#matching-strategies) and other [configuration](/user-manual/configuration). Data is then mapped according to these matches.
 
 Even when the _source_ and _destination_ objects and their properties are different, as in the example above, ModelMapper will do its best to determine reasonable matches between properties according to the configured [matching strategy](http://modelmapper.org/user-manual/configuration/#matching-strategies).
 
-### Explicit Mapping
+## Explicit Mapping
 
 While ModelMapper will do its best to implicitly match source and destination properties for you, sometimes you may need to explicitly define mappings between properties.
 
@@ -92,7 +92,7 @@ Then we can add the mapping to our `ModelMapper` instance:
 {:.prettyprint .lang-java}
 	modelMapper.addMappings(orderMap);
 
-### Conventional Configuration
+## Conventional Configuration
 
 As an alternative to manually mapping `Order.billingAddress.street` to `OrderDTO.billingStreet`, we can configure different conventions to be used when ModelMapper attempts to match these properties. The Loose [matching strategy](http://modelmapper.org/user-manual/configuration/#matching-strategies), which more loosely matches property names, will work in this case:
 
@@ -101,7 +101,7 @@ As an alternative to manually mapping `Order.billingAddress.street` to `OrderDTO
 
 Additional [matching strategies](http://modelmapper.org/user-manual/configuration/#matching-strategies) and other conventions can also be [configured](/user-manual/configuration) to control ModelMapper's property matching process.
 
-### Validating Matches
+## Validating Matches
 
 Aside from writing tests to verify that your objects are being mapped as expected, ModelMapper has built-in [validation](/user-manual/validation) that will let you know if any destination properties are unmatched.
 
@@ -122,7 +122,7 @@ Then we can validate our mappings:
 
 If any `TypeMap` contains a destination property that is unmatched to a source property a `ValidationException` will be thrown.
 
-### Next Steps
+## Next Steps
 
 Congratulations! You've learned how to map objects with safety and ease. 
 

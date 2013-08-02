@@ -8,7 +8,7 @@ title: Gson Integration
 
 ModelMapper's Gson integration allows you to map a Gson [JsonElement](http://google-gson.googlecode.com/svn/tags/1.2.3/docs/javadocs/com/google/gson/JsonElement.html) to a JavaBean.
 
-### Setup
+## Setup
 
 To get started, add the `modelmapper-gson` Maven dependency to your project:
 
@@ -24,7 +24,7 @@ Next, configure ModelMapper to support the JsonElementValueReader, which allows 
 {:.prettyprint .lang-java}
     modelMapper.getConfiguration().addValueReader(new JsonElementValueReader());
 	
-### Example Usage
+## Example Usage
 
 Consider the following JSON representing an order:
 
@@ -76,7 +76,7 @@ And we can assert that values are mapped as expected:
     assertEquals(order.getCustomer().getAddress().getStreet(), "123 Main Street");
     assertEquals(order.getCustomer().getAddress().getCity(), "SF");
 
-### Explicit Mapping
+## Explicit Mapping
 
 While ModelMapper will do its best to implcitly match JsonElement values to destination properties, sometimes you may need to explicitly define mappings between properties.
 
@@ -89,12 +89,12 @@ Let's map our JSON's `customer.street_address` to `Order.customer.address.street
       }
     };
 
-Then we can add the mapping to our `ModelMapper` instance:
+Then we can add the mapping to our `ModelMapper` instance for the `orderElement`:
 
 {:.prettyprint .lang-java}
 	modelMapper.createTypeMap(orderElement, Order.class).addMappings(orderMap);
 
-### Things to Note
+## Things to Note
 
 ModelMapper maintains a [TypeMap](http://modelmapper.org/javadoc/org/modelmapper/TypeMap.html) for each source and destination type, containing the mappings bewteen the two types. For "generic" types such as JsonElement this can be problematic since the structure of a JsonElement can vary. In order to distinguish structurally different JsonElements that map to the same destination type, we can provide a _type map name_ to ModelMapper.
 
@@ -113,5 +113,3 @@ Mapping this JSON to an order is simple, but we'll need to provide a _type map n
 {:.prettyprint .lang-java}
     JsonElement orderElement = new JsonParser().parse(flatOrderJson);
 	Order order = modelMapper.map(orderElement, Order.class, "flat");
-	
-Here we've used the name "flat" to represent the structure of the JsonElement that we're mapping to an Order.
