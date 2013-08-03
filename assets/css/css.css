@@ -49,7 +49,11 @@ a:hover {
 }
 
 #content h4 {
-  color: #d14;
+/*  color: #d14;*/
+}
+
+#content h5 {
+  /*  color: #d14;*/
 }
 
 #footer {
