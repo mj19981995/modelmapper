@@ -23,3 +23,9 @@ Value Readers allow you to read and map values from different types of source ob
 * [jOOQ](/user-manual/jooq-integration)
 * [Jackson](/user-manual/jackson-integration)
 * [Gson](/user-manual/gson-integration)
+
+## Native Integrations
+
+Certainl libraries natively integrate with ModelMapper without any additional depedencies. These include:
+
+* [JDBI](/user-manual/jdbi-integration)
