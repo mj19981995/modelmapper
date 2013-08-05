@@ -45,11 +45,11 @@ With that set, mapping order records to Order objects is simple:
 {:.prettyprint .lang-java}
     List<Map<String, Object>> orderRecords = handle.select("SELECT * FROM orders");
     List<Order> orders = modelMapper.map(orderRecords, new TypeToken<List<Order>>(){}.getType());
-    Order order = orders.get(0);
 	
-And we can assert that values are mapped as expected:
+And we can assert that our record values are mapped as expected:
 
 {:.prettyprint .lang-java}
+    Order order = orders.get(0);
     assertEquals(order.getId(), 456);
     assertEquals(order.getCustomer().getId(), 789);
     assertEquals(order.getCustomer().getAddress().getStreet(), "123 Main Street");
