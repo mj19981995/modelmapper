@@ -48,7 +48,7 @@ We may need to map this to a more complex object model:
 
     public class Address {
       private String street;
-	  private String ciity;
+	  private String city;
     }
 
 Since the source Record's fields in this example uses an underscore naming convention, we'll need to configure ModelMapper to tokenize source property names by underscore:
@@ -71,7 +71,7 @@ And we can assert that values are mapped as expected:
     
 ## Explicit Mapping
 
-While ModelMapper will do its best to implcitly match Record values to destination properties, sometimes you may need to explicitly define mappings between properties.
+While ModelMapper will do its best to implicitly match Record values to destination properties, sometimes you may need to explicitly define mappings between properties.
 
 Let's map our Record's `customer.street_address` to `Order.customer.address.street`:
 

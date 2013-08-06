@@ -79,7 +79,7 @@ And we can assert that values are mapped as expected:
     
 ## Explicit Mapping
 
-While ModelMapper will do its best to implcitly match JsonNode values to destination properties, sometimes you may need to explicitly define mappings between properties.
+While ModelMapper will do its best to implicitly match JsonNode values to destination properties, sometimes you may need to explicitly define mappings between properties.
 
 Let's map our JSON's `customer.street_address` to `Order.customer.address.street`:
 

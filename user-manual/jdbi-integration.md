@@ -32,7 +32,7 @@ We may need to map this to a more complex object model:
 
     public class Address {
       private String street;
-	  private String ciity;
+	  private String city;
     }
 
 Since the source record's fields in this example uses an underscore naming convention, we'll need to configure ModelMapper to tokenize source property names by underscore:
