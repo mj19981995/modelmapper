@@ -206,3 +206,17 @@ Alternatively, `Condition` implementations can extend `AbstractCondition` which 
 	};
 	
 	when(isNull.or(isEmpty)).skip().setName(source.getName());
+	
+## String Mapping
+
+In addition to mapping properies using getters and setters, ModelMapper supports the mapping of source property paths defined as Strings to destination method hierarchies:
+
+{:.prettyprint .lang-java}
+    map().getCustomer().getAddress().setStreet(this.<String>source("customer.street_address"));
+    
+Alternatively the source statement may also be used on the left-hand side of the `map()` statement:
+
+{:.prettyprint .lang-java}
+    map(source("customer.street_address")).getCustomer().getAddress().setStreet(null);
+    
+This API makes it easy to defines mappings from source objects that are not JavaBeans.

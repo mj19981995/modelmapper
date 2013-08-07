@@ -78,21 +78,26 @@ And we can assert that values are mapped as expected:
 
 ## Explicit Mapping
 
-While ModelMapper will do its best to implicitly match JsonElement values to destination properties, sometimes you may need to explicitly define mappings between properties.
+While ModelMapper will do its best to **implicitly** match JsonElement values to destination properties, sometimes you may need to **explicitly** define how one property maps to another. A [PropertyMap](/user-manual/property-mapping/) allows us to do this.
 
-Let's map our JSON's `customer.street_address` to `Order.customer.address.street`:
+Let's define how a `JsonElement` maps to an `Order` by creating a PropertyMap. Our PropertyMap will include a `map()` statement that maps a source JsonElement's `customer.street_address` field hierarchy to a destination Order's `getCustomer().getAddress().setStreet()` method hierarchy:
 
 {:.prettyprint .lang-java}
     PropertyMap<JsonElement, Order> orderMap = new PropertyMap<JsonElement Order>() {
       protected void configure() {
-        map(source("customer.street_address")).getCustomer().getAddress.setStreet(null);
+        map().getCustomer().getAddress().setStreet(this.<String>source("customer.street_address"));
       }
     };
 
-Then we can add the mapping to our `ModelMapper` instance for the `orderElement`:
+To use our PropertyMap, we'll create a TypeMap for our order JsonElement and add our PropertyMap to it:
 
 {:.prettyprint .lang-java}
-	modelMapper.createTypeMap(orderElement, Order.class).addMappings(orderMap);
+	modelMapper.createTypeMap(orderElement, Order.class).addMappings(orderMap)
+
+We can then map JsonElements to Orders as usual, with properties being mapped according to the PropertyMap that we defined:
+
+{:.prettyprint .lang-java}
+	Order order = modelMapper.map(orderElement, Order.class);
 
 ## Things to Note
 
