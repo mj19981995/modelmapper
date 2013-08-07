@@ -257,14 +257,14 @@ a:hover {
   font-weight: 300;
   margin-top: 0px;
   margin-bottom: 5px;
-  color: #08c;
+  color: #2A81A7 !important;
 }
 
 .marketing h3 {
   text-align: center;
   font-weight: 300;
   margin-bottom: 5px;
-  color: #2A5669;
+  color: #2A81A7 !important;
 }
 
 .marketing p {
