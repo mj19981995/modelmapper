@@ -188,6 +188,8 @@ Conditions can also be used with Providers and Converters:
 	    .using(personConverter)
 	    .map().setPerson(source.getPerson());
 
+Several [built-in Conditions](/javadoc/org/modelmapper/Conditions.html) are available.
+
 ### Combining Conditions
 
 Conditions can be combined using boolean operators with the help of the `Conditions` class:
