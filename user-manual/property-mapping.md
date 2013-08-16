@@ -129,6 +129,12 @@ When defining a mapping to use this converter, we simply pass the source _object
 
 **Note**: Since a source object is given, the `null` value passed to `setName` is unused.
 
+When using a Converter with a deep mapping, it is the last source and destination properties referenced by the mapping that will be passed to the the Converter:
+
+{:.prettyprint .lang-java}
+    // toUppercase will be called with the property types from getFirstName() and setName()
+	using(toUppercase).map().getCustomer().setName(source.getPerson().getFirstName());
+
 ## Providers
 
 Providers allow allow you to provide your own instance of destination properties and types prior to mapping (see the general page on [Providers](/user-manual/providers/) for more info).
@@ -155,9 +161,14 @@ Providers can also be used with converters:
 	with(personProvider)
 	    .using(personConverter)
 	    .map().setPerson(source.getPerson());
+	    
+When using a Provider with a deep mapping, it is the last destination property referenced by the mapping that will be used for the Provider:
+
+{:.prettyprint .lang-java}
+    // personProvider will be called with setPerson()'s property type as the requested type
+	with(personProvider).map().getOrder().setPerson(source.getPerson());
 
 ## Conditional Mapping
-
 
 Mapping for a destination property can be made conditional by supplying a `Condition` along with the mapping.
 
@@ -187,6 +198,12 @@ Conditions can also be used with Providers and Converters:
 	    .with(personProvider)
 	    .using(personConverter)
 	    .map().setPerson(source.getPerson());
+	    
+When using a Condition with a deep mapping, it is the last source and destination properties referenced by the mapping that will be passed to the Condition:
+
+{:.prettyprint .lang-java}
+    // isValidName will be called with the property types from getFirstName() and setName()
+	when(isValidName).map().getCustomer().setName(source.getPerson().getFirstName());
 
 Several [built-in Conditions](/javadoc/org/modelmapper/Conditions.html) are available.
 
