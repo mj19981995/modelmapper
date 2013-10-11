@@ -26,6 +26,6 @@ Value Readers allow you to read and map values from different types of source ob
 
 ## Native Integrations
 
-Certainl libraries natively integrate with ModelMapper without any additional depedencies. These include:
+Certain libraries natively integrate with ModelMapper without any additional depedencies. These include:
 
 * [JDBI](/user-manual/jdbi-integration)
