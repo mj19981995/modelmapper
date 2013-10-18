@@ -59,3 +59,7 @@ We can also specify a Provider to be used for providing instances of mapped prop
 ### By Property
 
 Finally, providers can be used to provide instances of specific properties. See the mapping API page on [providers](/user-manual/property-mapping/#providers) for more on this.
+
+### Notes
+
+If you don't want to or can't construct a requested type, you can always return `null` from a Provider and ModelMapper will construct the type for you.
