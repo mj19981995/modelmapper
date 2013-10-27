@@ -2,7 +2,7 @@
 
 ## ModelMapper Core
 
-* [modelmapper-{{site.version}}.jar](/assets/modelmapper-{{site.version}}.jar)
+* [modelmapper-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/modelmapper/{{site.version}}/modelmapper-{{site.version}}.jar)
 
 ### Core Maven Setup
 
@@ -17,27 +17,27 @@
 
 #### Spring
 
-* [modelmapper-spring-{{site.version}}.jar](/assets/modelmapper-spring-{{site.version}}.jar)
+* [modelmapper-spring-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-spring/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
 
 #### Guice
 
-* [modelmapper-guice-{{site.version}}.jar](/assets/modelmapper-guice-{{site.version}}.jar)
+* [modelmapper-guice-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-guice/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
 
 #### Dagger
 
-* [modelmapper-dagger-{{site.version}}.jar](/assets/modelmapper-dagger-{{site.version}}.jar)
+* [modelmapper-dagger-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-dagger/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
 
 #### jOOQ
 
-* [modelmapper-jooq-{{site.version}}.jar](/assets/modelmapper-jooq-{{site.version}}.jar)
+* [modelmapper-jooq-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-jooq/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
 
 #### Jackson
 
-* [modelmapper-jackson-{{site.version}}.jar](/assets/modelmapper-jackson-{{site.version}}.jar)
+* [modelmapper-jackson-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-jackson/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
 
 #### Gson
 
-* [modelmapper-gson-{{site.version}}.jar](/assets/modelmapper-gson-{{site.version}}.jar)
+* [modelmapper-gson-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-gson/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
 
 ### Integration Maven Setup
 
