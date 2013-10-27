@@ -21,7 +21,7 @@ To get started, add the `modelmapper-dagger` Maven dependency to your project:
 	
 ## Usage
 
-Let's obtain a Dagger integrated [Provider](/user-manual/provider), which will delegate to an [ObjectGraph](http://square.github.io/dagger/javadoc/dagger/ObjectGraph.html) whenever called:
+Let's obtain a Dagger integrated [Provider](/user-manual/providers), which will delegate to an [ObjectGraph](http://square.github.io/dagger/javadoc/dagger/ObjectGraph.html) whenever called:
 
 {:.prettyprint .lang-java}
 	Provider<?> daggerProvider = DaggerIntegration.fromDagger(objectGraph);

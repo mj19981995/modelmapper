@@ -21,7 +21,7 @@ To get started, add the `modelmapper-spring` Maven dependency to your project:
 	
 ## Usage
 
-Let's obtain a Spring integrated [Provider](/user-manual/provider), which will delegate to a [BeanFactory](http://static.springsource.org/spring/docs/3.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html) whenever called:
+Let's obtain a Spring integrated [Provider](/user-manual/providers), which will delegate to a [BeanFactory](http://static.springsource.org/spring/docs/3.0.x/javadoc-api/org/springframework/beans/factory/BeanFactory.html) whenever called:
 
 {:.prettyprint .lang-java}
 	Provider<?> springProvider = SpringIntegration.fromSpring(beanFactory);

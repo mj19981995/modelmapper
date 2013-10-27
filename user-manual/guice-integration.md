@@ -21,7 +21,7 @@ To get started, add the `modelmapper-guice` Maven dependency to your project:
 
 ## Usage
 
-Let's obtain a Guice integrated [Provider](/user-manual/provider), which will delegate to an [Injector](https://google-guice.googlecode.com/svn/trunk/latest-javadoc/com/google/inject/Injector.html) whenever called:
+Let's obtain a Guice integrated [Provider](/user-manual/providers), which will delegate to an [Injector](https://google-guice.googlecode.com/svn/trunk/latest-javadoc/com/google/inject/Injector.html) whenever called:
 
 {:.prettyprint .lang-java}
 	Provider<?> guiceProvider = GuiceIntegration.fromGuice(injector);
