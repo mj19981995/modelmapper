@@ -17,23 +17,23 @@
 
 #### Spring
 
-* [modelmapper-spring-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-spring/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
+* [modelmapper-spring-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-spring/{{site.version}}/modelmapper-spring-{{site.version}}.jar)
 
 #### Guice
 
-* [modelmapper-guice-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-guice/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
+* [modelmapper-guice-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-guice/{{site.version}}/modelmapper-guice-{{site.version}}.jar)
 
 #### Dagger
 
-* [modelmapper-dagger-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-dagger/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
+* [modelmapper-dagger-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-dagger/{{site.version}}/modelmapper-dagger-{{site.version}}.jar)
 
 #### jOOQ
 
-* [modelmapper-jooq-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-jooq/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
+* [modelmapper-jooq-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-jooq/{{site.version}}/modelmapper-jooq-{{site.version}}.jar)
 
 #### Jackson
 
-* [modelmapper-jackson-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-jackson/{{site.version}}/modelmapper-gson-{{site.version}}.jar)
+* [modelmapper-jackson-{{site.version}}.jar](http://search.maven.org/remotecontent?filepath=org/modelmapper/extensions/modelmapper-jackson/{{site.version}}/modelmapper-jackson-{{site.version}}.jar)
 
 #### Gson
 
