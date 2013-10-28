@@ -362,3 +362,8 @@ thead th {
   display: inline;
   margin-right: 10px;
 }
+
+div.yourkit {
+  padding-top: 25px;
+  font-size: 13px;
+}
