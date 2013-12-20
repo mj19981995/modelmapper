@@ -14,7 +14,7 @@ To get started, add the `modelmapper-jooq` Maven dependency to your project:
 
 {:.prettyprint .lang-xml}
 	<dependency>
-	  <groupId>org.modelmapper</groupId>
+	  <groupId>org.modelmapper.extensions</groupId>
 	  <artifactId>modelmapper-jooq</artifactId>
 	  <version>{{ site.version }}</version>
 	</dependency>

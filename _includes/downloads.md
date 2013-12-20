@@ -43,7 +43,7 @@
 
 {:.prettyprint .lang-xml}
 	<dependency>
-	  <groupId>org.modelmapper</groupId>
+	  <groupId>org.modelmapper.extensions</groupId>
 	  <artifactId>modelmapper-[integration-name]</artifactId>
 	  <version>{{ site.version }}</version>
 	</dependency>
