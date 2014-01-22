@@ -6,7 +6,11 @@ title: Integrations
 
 # Integrations
 
-ModelMapper's [API](/user-manual/api-overview/) and [SPI](/user-manual/spi-overview/) allow for simple the integration with 3rd party libraries. Several 3rd party integrations are available.
+ModelMapper was designed to be easily extensible via the [API](/user-manual/api-overview/) and [SPI](/user-manual/spi-overview/) and to integrate well with existing technologies. Several integrations are described below.
+
+## General
+
+* [OSGi](/user-manual/osgi-integration/)
 
 ## Provider Integrations
 
