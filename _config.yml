@@ -5,3 +5,6 @@ name: ModelMapper
 baseurl: 
 markdown: kramdown
 version: 0.6.5
+
+kramdown:
+  parse_block_html: true

@@ -23,11 +23,16 @@ Otherwise you can [download](/downloads) the latest ModelMapper jar and add it t
 
 ## Mapping
 
-Let's try mapping some objects. Consider the following [object model](https://github.com/jhalterman/modelmapper/tree/master/examples/src/main/java/org/modelmapper/gettingstarted):
+Let's try mapping some objects. Consider the following source and destination [object models](https://github.com/jhalterman/modelmapper/tree/master/examples/src/main/java/org/modelmapper/gettingstarted):
+
+{::options parse_block_html="true" /}
+<div class="container">
+<div class="row">
+<div class="span4">  
+#### Source model
 
 {:.prettyprint .lang-java}
 	// Assume getters and setters on each class
-	
 	class Order {
 	  Customer customer;
 	  Address billingAddress;
@@ -46,13 +51,21 @@ Let's try mapping some objects. Consider the following [object model](https://gi
 	  String street;
 	  String city;
 	}
-	
+</div>
+<div class="span4">
+#### Destination Model
+
+{:.prettyprint .lang-java}
+	// Assume getters and setters
 	class OrderDTO {
 	  String customerFirstName;
 	  String customerLastName;
 	  String billingStreet;
 	  String billingCity;
 	}
+</div>
+</div>
+</div>
 
 We can use ModelMapper to implicitly map an `order` instance to a new `OrderDTO`:
 
