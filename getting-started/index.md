@@ -91,7 +91,7 @@ Even when the _source_ and _destination_ objects and their properties are differ
 
 While ModelMapper will do its best to implicitly match source and destination properties for you, sometimes you may need to explicitly define mappings between properties.
 
-Let's map `Order.billingAddress.street` to `OrderDTO.billingStreet` and `Order.billingAddress.city` to `OrderDTO.billingCity`. First we'll define a `PropertyMap` that contains this mapping:
+ModelMapper supports a variety of mapping approaches, allowing you to use any mix of methods and field references. Let's map `Order.billingAddress.street` to `OrderDTO.billingStreet` and map `Order.billingAddress.city` to `OrderDTO.billingCity`. First we'll define a `PropertyMap` that contains these mappings:
 
 {:.prettyprint .lang-java}
 	PropertyMap<Order, OrderDTO> orderMap = new PropertyMap<Order, OrderDTO>() {
@@ -101,7 +101,7 @@ Let's map `Order.billingAddress.street` to `OrderDTO.billingStreet` and `Order.b
 	  }
 	};
 
-ModelMapper supports a variety of approaches to mapping properties, allowing you to use any mix of methods and field references. With our mappings defined we can add them to our `ModelMapper` instance:
+Then with our mappings defined we can add them to our `ModelMapper` instance:
 
 {:.prettyprint .lang-java}
 	modelMapper.addMappings(orderMap);

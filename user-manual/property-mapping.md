@@ -253,7 +253,7 @@ Alternatively, `Condition` implementations can extend `AbstractCondition` which 
 	
 ## String Mapping
 
-In addition to mapping properies using getters and setters, ModelMapper supports the mapping of source property paths defined as Strings to destination method hierarchies:
+In addition to mapping properies using getters and setters, ModelMapper supports the mapping of source property paths defined as Strings:
 
 {:.prettyprint .lang-java}
     map().getCustomer().address.setStreet(this.<String>source("customer.street_address"));
