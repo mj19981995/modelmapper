@@ -86,7 +86,7 @@ A PropertyMap allows us to create explicit mappings for `street` and `city`:
 	PropertyMap <OrderDTO, Order> orderMap = new PropertyMap <OrderDTO, Order>() {
 	  protected void configure() {
 	    map().getAddress().setStreet(source.getStreet());
-	    map().getAddress().setCity(source.getCity());
+	    map().address.setCity(source.city);
 	  }
 	};
 	

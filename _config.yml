@@ -4,7 +4,7 @@ paginate: 10
 name: ModelMapper
 baseurl: 
 markdown: kramdown
-version: 0.6.5
+version: 0.7.0
 
 kramdown:
   parse_block_html: true

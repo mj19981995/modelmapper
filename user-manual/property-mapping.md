@@ -28,6 +28,15 @@ This example maps the destination type's `setName` method to the source type's `
 {:.prettyprint .lang-java}
 	map().setName(source.getFirstName());
 
+This example maps the destination type's `setLastName` method to the source type's `surName` field:
+
+{:.prettyprint .lang-java}	
+	map().setLastName(source.surName);
+	
+This example maps the source type's `address` field to the destination type's `streetAddress` field:
+	
+	map(source.address, destination.streetAddress);
+
 This example maps the destination type's `setEmployer` method to the constant value `"Initech"`:
 
 {:.prettyprint .lang-java}
@@ -70,17 +79,23 @@ This example maps the destination type's `setAge` method to the source type's `g
 {:.prettyprint .lang-java}
 	map().setAge(source.getCustomer().getAge());
 
-This example maps the destination type's `getCustomer().setName()` method hierarchy to the source type's `getPerson().getFirstName()` method hierarchy: 
+This example maps the destination type's `getCustomer().setName()` method hierarchy to the source type's `person.getFirstName()` property hierarchy: 
 
 {:.prettyprint .lang-java}
-	map().getCustomer().setName(source.getPerson().getFirstName());
+	map().getCustomer().setName(source.person.getFirstName());
 
 **Note**: In order populate the destination object, deep mapping requires the `getCustomer` method to have a corresponding mutator, such as a `setCustomer` method or an accessible `customer` field.
+
+We can also mix field references into either the source or destination when deep mapping:
+
+{:.prettyprint .lang-java}
+    map(source.customer.age, destination);
+    map().customer.setName(source.getPerson().firstName);
 
 Deep mapping can also be performed for source properties or values whose types do not match the destination property's type:
 
 {:.prettyprint .lang-java}
-	map(source.getPerson.getAge()).setAgeString(null);
+	map(source.person.getAge()).setAgeString(null);
 
 **Note**: Since the `setAgeString` method requires a value we simply pass in `null` which is unused.
 
@@ -94,6 +109,11 @@ This example specifies that the destination type's `setName` method should be sk
 	skip().setName(null);
 
 **Note**: Since the `setName` method is skipped the `null` value is unused.
+
+We can also skip the mapping of fields:
+
+{:.prettyprint .lang-java}
+	skip(source.name);
 
 ## Converters
 
@@ -133,7 +153,7 @@ When using a Converter with a deep mapping, it is the last source and destinatio
 
 {:.prettyprint .lang-java}
     // toUppercase will be called with the property types from getFirstName() and setName()
-	using(toUppercase).map().getCustomer().setName(source.getPerson().getFirstName());
+	using(toUppercase).map().customer.setName(source.getPerson().getFirstName());
 
 ## Providers
 
@@ -190,6 +210,11 @@ In this example, mapping to `setName` will be _skipped_ if the source is not nul
 
 {:.prettyprint .lang-java}
 	when(notNull).skip().setName(source.getName());
+	
+We can also conditionally skip the mapping of fields:
+
+{:.prettyprint .lang-java}
+	when(notNull).skip(source.name, destination.name);
 
 Conditions can also be used with Providers and Converters:
 
@@ -203,7 +228,7 @@ When using a Condition with a deep mapping, it is the last source and destinatio
 
 {:.prettyprint .lang-java}
     // isValidName will be called with the property types from getFirstName() and setName()
-	when(isValidName).map().getCustomer().setName(source.getPerson().getFirstName());
+	when(isValidName).map().getCustomer().setName(source.person.getFirstName());
 
 Several [built-in Conditions](/javadoc/org/modelmapper/Conditions.html) are available.
 
@@ -231,11 +256,11 @@ Alternatively, `Condition` implementations can extend `AbstractCondition` which 
 In addition to mapping properies using getters and setters, ModelMapper supports the mapping of source property paths defined as Strings to destination method hierarchies:
 
 {:.prettyprint .lang-java}
-    map().getCustomer().getAddress().setStreet(this.<String>source("customer.street_address"));
+    map().getCustomer().address.setStreet(this.<String>source("customer.street_address"));
     
 Alternatively the source statement may also be used on the left-hand side of the `map()` statement:
 
 {:.prettyprint .lang-java}
-    map(source("customer.street_address")).getCustomer().getAddress().setStreet(null);
+    map(source("customer.street_address")).getCustomer().address.setStreet(null);
     
-This API makes it easy to defines mappings from source objects that are not JavaBeans.
+This API makes it easy to define mappings from source objects that are not JavaBeans.

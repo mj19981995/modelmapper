@@ -16,29 +16,29 @@ Consider the following complex object model:
 	// Assume getters and setters on each class
 	
 	public class Order {
-	  private Customer customer;
-	  private Address shippingAddress;
-	  private Address billingAddress;
+	  Customer customer;
+	  Address shippingAddress;
+	  Address billingAddress;
 	}
 	
 	public class Customer {
-	  private String name;
+	  String name;
 	}
 	
 	public class Address {
-	  private String street;
-	  private String city;
+	  String street;
+	  String city;
 	}
 
 We may wish to flatten `Order` to a single object:
 
 {:.prettyprint .lang-java}
 	public class OrderDTO {
-	  private String customerName;
-	  private String shippingStreetAddress;
-	  private String shippingCity;
-	  private String billingStreetAddress;
-	  private String billingCity;
+	  String customerName;
+	  String shippingStreetAddress;
+	  String shippingCity;
+	  String billingStreetAddress;
+	  String billingCity;
 	
 	  // Assume getters and setters
 	}
@@ -66,20 +66,20 @@ Consider the following source object model:
 	// Assume getters and setters on each class
 	
 	public class Person {
-	  private Address address;
+	  Address address;
 	}
 	
 	public class Address {
-	  private String street;
-	  private String city;
+	  String street;
+	  String city;
 	}
 
 We may wish to flatten `Person` to the following object:
 
 {:.prettyprint .lang-java}
 	public class PersonDTO {
-	  private String street;
-	  private String city;
+	  String street;
+	  String city;
 	
 	  // Assume getters and setters
 	}
@@ -94,7 +94,7 @@ A PropertyMap allows us to create explicit mappings for `street` and `city` betw
 	PropertyMap<Person, PersonDTO> personMap = new PropertyMap<Person, PersonDTO>() {
 	  protected void configure() {
 	    map().setStreet(source.getAddress().getStreet());
-	    map().setCity(source.getAddress().getCity());
+	    map(source.getAddress().city, destination.city);
 	  }
 	};
 	
