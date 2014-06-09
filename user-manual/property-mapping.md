@@ -42,6 +42,11 @@ This example maps the destination type's `setEmployer` method to the constant va
 {:.prettyprint .lang-java}
 	map().setEmployer("Initech");
 	
+This example maps the constant `"Initech"` to the destination field `employer`:
+
+{:.prettyprint .lang-java}
+	map("Initech", destination.employer);
+	
 ### Using a PropertyMap
 
 Once a PropertyMap is defined, it is used to add mappings to a ModelMapper:
@@ -55,7 +60,7 @@ Multiple PropertyMaps may be added for the same source and destination types, so
 
 ### Handling Mismatched Types
 
-Map statements can also be written to map properties whose types do not match:
+Map statements can also be written to map methods whose types do not match:
 
 {:.prettyprint .lang-java}
 	map(source.getAge()).setAgeString(null);
@@ -84,7 +89,7 @@ This example maps the destination type's `getCustomer().setName()` method hierar
 {:.prettyprint .lang-java}
 	map().getCustomer().setName(source.person.getFirstName());
 
-**Note**: In order populate the destination object, deep mapping requires the `getCustomer` method to have a corresponding mutator, such as a `setCustomer` method or an accessible `customer` field.
+**Note**: In order to populate the destination object, deep mapping requires the `getCustomer` method to have a corresponding mutator, such as a `setCustomer` method or an accessible `customer` field.
 
 We can also mix field references into either the source or destination when deep mapping:
 
@@ -132,6 +137,11 @@ Using the `toUppercase` Converter to map from a source property to a destination
 
 {:.prettyprint .lang-java}
 	using(toUppercase).map().setName(source.getName());
+	
+We can also use a Converter to map fields:
+
+{:.prettyprint .lang-java}
+	using(toUppercase).map(source.name, destination.name);
 
 Alternatively, instead of using a converter to map a source property we can create a Converter intended to map from a source _object_ to a destination property:
 
