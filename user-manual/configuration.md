@@ -35,7 +35,7 @@ This example configures a `ModelMapper` to allow private fields to be matched:
 
 {:.prettyprint .lang-java}
 	modelMapper.getConfiguration()
-	  .enableFieldMatching(true)
+	  .setFieldMatchingEnabled(true)
 	  .setFieldAccessLevel(AccessLevel.PRIVATE);
 
 This example configures a `ModelMapper` to use the `Loose` [MatchingStrategies matching strategy]:
