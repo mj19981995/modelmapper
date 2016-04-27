@@ -16,7 +16,7 @@ Let's say you want to map a List of Integers to a List of Strings:
     List<Integer> numbers = buildIntegers();
     List<String> characters = new ArrayList<String>();
     
-    modelMapper.map(integers, characters);
+    modelMapper.map(numbers, characters);
 
 Unfortunately, `characters` is populated with **`Integer`** instances, not `String` instances as expected. The reason is ModelMapper doesn't know that `characters` is supposed to contain `String` instances since that type information is erased at runtime. So it creates another List of Integers. The workaround? Use TypeTokens:
 
